@@ -33,41 +33,21 @@ function initializeSwiper() {
     speed: 1000,
     on: {
       init: function () {
-        // Add fade-in animation to hero content
-        document.querySelectorAll(".hero__content").forEach((content) => {
-          content.style.opacity = "0";
-          content.style.transform = "translateY(50px)";
-          content.style.transition = "opacity 1s ease, transform 1s ease";
-        });
+        // Add fade-in animation to hero content (fixed content outside slides)
+        const heroContent = document.querySelector(".hero__content");
+        if (heroContent) {
+          heroContent.style.opacity = "0";
+          heroContent.style.transition = "opacity 1s ease";
 
-        // Show first slide content
-        const firstSlide = document.querySelector(
-          ".swiper-slide-active .hero__content"
-        );
-        if (firstSlide) {
+          // Show hero content after initialization
           setTimeout(() => {
-            firstSlide.style.opacity = "1";
-            firstSlide.style.transform = "translateY(0)";
+            heroContent.style.opacity = "1";
           }, 500);
         }
       },
       slideChange: function () {
-        // Hide all content
-        document.querySelectorAll(".hero__content").forEach((content) => {
-          content.style.opacity = "0";
-          content.style.transform = "translateY(50px)";
-        });
-
-        // Show active slide content
-        const activeSlide = document.querySelector(
-          ".swiper-slide-active .hero__content"
-        );
-        if (activeSlide) {
-          setTimeout(() => {
-            activeSlide.style.opacity = "1";
-            activeSlide.style.transform = "translateY(0)";
-          }, 300);
-        }
+        // Hero content is now fixed, so no need to hide/show on slide change
+        // Content remains visible throughout all slides
       },
     },
   });
