@@ -1,0 +1,115 @@
+site_settings:
+  markup: "HTML5（BEM 風クラス命名）"
+  style:
+    language: "CSS3（SCSS で開発 → style.css に出力）"
+    features: ["Flexbox", "CSS Grid", "root 変数", "clamp()"]
+  javascript:
+    version: "ES6"
+    structure: "モジュール化なし、1 本の main.js"
+  libraries:
+    - name: "Swiper"
+      version: "8.x"
+      usage: ["ヒーロー", "ギャラリー", "納入事例の各スライダー"]
+  animation:
+    methods: ["Intersection Observer", "CSS トランジション"]
+    effects: ["fade-in", "slide-up"]
+  fonts:
+    - "Google Fonts Noto Sans JP 400"
+    - "Google Fonts Noto Sans JP 700"
+  colors:
+    clr-base: "#3a2d23"
+    clr-accent: "#c8a27e"
+    clr-bg: "#f5f5f5"
+  breakpoints:
+    - "1024px: 2 カラム→1 カラム"
+    - "768px: フォント縮小・スライド 1 枚表示"
+
+sections:
+  - id: 1
+    name: "ヒーロー"
+    class: ".hero（.swiper-container）"
+    library: "Swiper"
+    config: "effect:'fade', autoplay:5000, loop:true"
+    images: ["hero-image-01~04-pc.jpg 約1920×1080px ×4"]
+    layout: "100vw×100vh, object-fit:cover"
+    overlay: "矢印アイコン（40×40px）position:absolute; z-index:10;"
+  - id: 2
+    name: "イントロダクション"
+    class: ".intro"
+    library: "なし"
+    images: ["intro-img-pc.jpg 約900×600px"]
+    layout: "右列に配置, opacity:.15, position:absolute, z-index:-1"
+  - id: 3
+    name: "概要 01"
+    class: ".about01"
+    images: ["about01-01~05-pc.jpg 各800×600px"]
+    layout: "2 カラム, 上下 40px 重ね, margin-top:-20%, 背景に巨大番号"
+  - id: 4
+    name: "概要 02"
+    class: ".about02"
+    images: ["about02-01~04-pc.jpg"]
+    layout: "概要 01 と同じ（向き違い）"
+  - id: 5
+    name: "ライフスタイル"
+    class: ".lifestyle"
+    images:
+      ["about03-01-pc2x.jpg", "about03-02-pc.jpg", "白い人物シルエット SVG"]
+    layout: "2 枚を斜めに重ね, SVG は最上層（mix-blend-mode:screen; opacity:.4; position:absolute）"
+  - id: 6
+    name: "ギャラリー"
+    class: ".gallery（.swiper-container）"
+    library: "Swiper"
+    config: "slidesPerView:1.2, spaceBetween:24"
+    images: ["gallery-01~05-pc.jpg 約800×600px"]
+    layout: "背景#3a2d23, border-radius:8px, overflow:hidden, ドット上・矢印下"
+  - id: 7
+    name: "納入事例"
+    class: ".cases"
+    library: "Swiper（サムネイル部）"
+    images: ["case-y-01~03-thumb-pc.jpg 360×240px"]
+    layout: "grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)), hover: transform + caption fade-in"
+  - id: 8
+    name: "特長 01–04"
+    class: ".feature"
+    animation: "IO + CSS"
+    images: ["feature01~04-pc.jpg 600×400px"]
+    layout: "上下 100px、左右交互、番号は clamp(), position:absolute"
+  - id: 9
+    name: "CTA"
+    class: ".cta"
+    images: ["cta-bg-pc.jpg 1920×400px"]
+    layout: "background-size:cover, オーバーレイ rgba(58,45,35,.7), 中央に白文字＋ボタン"
+  - id: 10
+    name: "フッター"
+    class: "―"
+    content: "cleanup.jp 共通フッターを <iframe> で読み込み"
+
+layers_and_transparency:
+  - use: "ヒーロー画像"
+    z_index: 0
+    opacity: "なし"
+    note: "スライド背景"
+  - use: "イントロ写真"
+    z_index: -1
+    opacity: "15%"
+    note: "見出し背面"
+  - use: "概要写真（重ね上段）"
+    z_index: 1
+    opacity: "なし"
+    note: "下段写真に 40px かぶせ"
+  - use: "ライフスタイル SVG"
+    z_index: 2
+    opacity: "40%"
+    note: "写真とテキストの上"
+  - use: "CTA オーバーレイ"
+    z_index: 1
+    opacity: "70%"
+    note: "背景画像の上に半透明レイヤー"
+
+implementation_notes:
+  - "Swiper を 2 箇所（ヒーロー／ギャラリー）＋サムネイル用に初期化"
+  - "Intersection Observer で .is-visible を付与し、CSS 側でフェード／スライド"
+  - "画像は loading='lazy'、大判は object-fit:cover でリサイズ"
+  - "見出しや番号は clamp() で可変フォントサイズ指定"
+  - "2 枚重ね写真は Flex + negative margin で簡単に実装"
+  - "カラー・フォント・余白は root 変数を使い SCSS で共通化"

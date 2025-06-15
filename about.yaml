@@ -1,0 +1,126 @@
+homepage_project:
+  client:
+    industry: 国際結婚相談所
+    current_site_status:
+      issues:
+        - SEO流入の減少
+        - テキスト中心で視認性が悪い
+        - コンテンツが分散していて分かりづらい
+        - 顧客期待（白人男性）とのギャップ
+  goals:
+    - ホームページのリニューアル
+    - SEO強化
+    - 白人男性向けLPの新設（英語 or 海外ユーザー想定）
+    - 運用負荷の軽減
+  structure:
+    plan: スタンダードプラン（2〜6ページ）
+    pages:
+      - トップページ
+      - 婚活サービス紹介
+      - 成婚実績・口コミ紹介
+      - 代表プロフィール（簡略化）
+      - ブログ
+      - お問い合わせフォーム
+    image_usage:
+      - フリー素材
+      - AI生成画像（多様な人種・オリジナリティ）
+      - 必要に応じてクライアント提供写真
+    CMS:
+      type: ノーコードツール（Mixhost等）
+      user_editable: true
+      UI: PowerPoint感覚で操作可能
+  seo:
+    enabled: true
+    monthly_articles: 2
+    article_cost: 5000
+    min_contract_months: 12
+    entry_method:
+      default: クライアント自身で入稿
+      option:
+        enabled: true
+        cost_per_article: 3000
+    total_estimate:
+      monthly_seo_cost: 10000〜20000
+      full_year: 約240000円
+  domain:
+    new_domain_required: true
+    impact_on_ranking: 多少あり（徐々に回復可能）
+    google_my_business:
+      link_update_required: true
+      support_provided: 方法案内のみ（作業は本人）
+  contract:
+    pricing_plan:
+      initial_cost: 5000
+      monthly_fee: 14800
+      min_contract_months: 6
+      total_initial: 103180
+    ownership_transfer:
+      after_months: 36
+    billing_method:
+      - 銀行振込
+      - クレジットカード
+      - デビットカード
+  schedule:
+    estimated_duration: 2〜2.5ヶ月
+    process:
+      - ヒアリングフォーム提出
+      - デモデザイン作成
+      - 打ち合わせと修正
+      - デモサイト→公開
+  content_policy:
+    text_production:
+      included: true
+      base: 現行文言をブラッシュアップ
+    image_policy:
+      ai_and_stock_images: included
+      original_suggestion: optional with advice
+  extra_notes:
+    - 代表の露出を控え、将来的な他スタッフへの引き継ぎ可能な構成にしたい
+    - 入会フローやイメージ図を強化したい
+    - Googleマイビジネスの2拠点登録は不可だが、リンク変更で対応可能
+    - SEOはホームページ公開後に本格実施（納品前には非推奨）
+
+# 1) 会社・事業概要
+company_profile:
+  名称: "虎ノ門国際結婚相談所ポシビリテJAPAN"
+  代表者: "山崎 あきこ"
+  所在地: "〒105-0001 東京都港区虎ノ門3-18-6 朝日虎ノ門マンション614号"
+  電話番号: "080-1424-4996"
+  営業時間: "10:00〜20:00"
+  定休日: "不定休"
+  主要連携先:
+    - "Susie Carter / AlaskaMen"
+    - "日本仲人連盟エスクラブ・カネクトショップ"
+  事業内容:
+    国際結婚相談所サービス:
+      概要:
+        - "日本人女性と欧米男性のマッチングに特化"
+        - "カウンセリング・プロフィール作成・お見合い設定・成婚後フォロー"
+      プラン:
+        20代プラン:
+          入会金: "33,000円"
+          登録料: "11,000円"
+          月会費: "7,980円"
+          成婚料: "220,000円"
+        スタンダードプラン:
+          入会金: "33,000円"
+          登録料: "55,000円"
+          月会費: "22,000円"
+          成婚料: "330,000円"
+        リュクスプラン:
+          入会金: "33,000円"
+          登録料: "66,000円"
+          月会費: "37,000円"
+          成婚料: "450,000円"
+    エステティックサロン事業:
+      概要:
+        - "エステティックサロンPOSSIBILITE運営"
+        - "美容・ファッション指導による自己磨き支援"
+  代表者プロフィール:
+    出身: "兵庫県"
+    経歴:
+      - "神戸女子短期大学家政学科卒"
+      - "東京ブライダルショー勤務"
+      - "エステティシャンとして延べ1万人以上を担当"
+      - "Susie Carterに師事し国際婚活支援を開始（2020年）"
+  ミッション: "日本人女性が理想の欧米男性と出会い、幸せな国際結婚を実現するための総合サポート"
